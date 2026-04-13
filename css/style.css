@@ -53,7 +53,7 @@ nav {
 }
 
 .logo-img {
-  height: 36px;
+  height: 30px;
   width: auto;
   display: block;
 }
@@ -716,11 +716,17 @@ footer {
 }
 
 @media (max-width: 768px) {
-  nav { padding: 0 1.25rem; }
-  .nav-links { gap: 1.5rem; }
+  nav {
+    padding: 0.75rem 1.25rem;
+    height: auto;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  .logo { justify-content: center; }
+  .logo-img { height: 22px; }
+  .nav-links { gap: 1.75rem; justify-content: center; padding-bottom: 0.6rem; }
   .hero { grid-template-columns: 1fr; min-height: auto; }
   .hero-left { padding: 3rem 1.5rem; border-right: none; border-bottom: 1px solid var(--border); }
-  .logo-img {height: 22px;}
   .hero-right { min-height: 60vw; }
   .work-teaser { padding: 3rem 1.5rem; }
   .work-teaser-grid { grid-template-columns: 1fr 1fr; }
