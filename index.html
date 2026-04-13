@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gazel — UI/UX Designer & Web Developer</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --accent: #00e5ff;
+      --accent2: #7c6aff;
+      --dark: #0f0f0f;
+      --card: #1a1a1a;
+      --card2: #141414;
+      --border: #2a2a2a;
+      --text: #f0f0f0;
+      --muted: #888;
+      --font: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font);
+      background: var(--dark);
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* ── NAV ── */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2.5rem;
+      height: 64px;
+      border-bottom: 1px solid var(--border);
+      background: rgba(15,15,15,0.95);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 2px;
+      cursor: pointer;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      color: var(--muted);
+      cursor: pointer;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: color 0.2s;
+      padding-bottom: 2px;
+      border-bottom: 1px solid transparent;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+
+    /* ── PAGES ── */
+    .page { display: none; }
+    .page.active { display: block; }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 4rem 2.5rem;
+    }
+
+    /* ── TYPOGRAPHY ── */
+    h1 { font-size: 56px; font-weight: 600; letter-spacing: -1.5px; line-height: 1.05; }
+    h2 { font-size: 36px; font-weight: 500; letter-spacing: -0.5px; margin-bottom: 0.5rem; }
+    h3 { font-size: 18px; font-weight: 500; }
+    h4 { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--accent2); margin-bottom: 0.75rem; }
+
+    .accent-text { color: var(--accent); }
+    .muted { color: var(--muted); }
+    .label {
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* ── DIVIDER ── */
+    .divider { height: 1px; background: var(--border); margin: 2.5rem 0; }
+
+    /* ── TAGS ── */
+    .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 1rem; }
+    .tag {
+      display: inline-block;
+      background: #1e1e1e;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 11px;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.5px;
+    }
+    .tag.hi { border-color: var(--accent); color: var(--accent); }
+    .tag.hi2 { border-color: var(--accent2); color: var(--accent2); }
+
+    /* ── BUTTONS ── */
+    .btn {
+      display: inline-block;
+      padding: 12px 28px;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-transform: uppercase;
+      text-decoration: none;
+      font-family: var(--font);
+    }
+    .btn:hover { background: var(--accent); color: #000; }
+    .btn2 { border-color: var(--accent2); color: var(--accent2); }
+    .btn2:hover { background: var(--accent2); color: #fff; }
+    .btn-group { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    /* ── CARDS ── */
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.5rem;
+      transition: border-color 0.2s;
+    }
+    .card:hover { border-color: #3a3a3a; }
+
+    /* ── GRID ── */
+    .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+    .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
+
+    /* ─── HOME PAGE ─── */
+    .hero { padding: 5rem 0 2rem; }
+    .intro-bar { width: 40px; height: 3px; background: var(--accent); margin-bottom: 1.5rem; border-radius: 2px; }
+    .hero-sub {
+      font-size: 17px;
+      color: var(--muted);
+      margin: 1.25rem 0 2.5rem;
+      line-height: 1.8;
+      max-width: 520px;
+    }
+
+    .what-icon {
+      font-size: 20px;
+      margin-bottom: 0.75rem;
+    }
+    .what-title { font-size: 17px; font-weight: 500; margin-bottom: 0.4rem; }
+    .what-desc { font-size: 14px; color: var(--muted); line-height: 1.7; }
+
+    /* ─── RESUME PAGE ─── */
+    .resume-section { margin-bottom: 0; }
+    .section-label {
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .resume-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .resume-item:last-child { border-bottom: none; }
+    .ri-title { font-size: 15px; font-weight: 500; }
+    .ri-sub { font-size: 13px; color: var(--muted); margin-top: 3px; }
+    .ri-date { font-size: 12px; color: var(--muted); white-space: nowrap; margin-left: 1rem; }
+
+    .skill-row { margin-bottom: 1.1rem; }
+    .skill-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      margin-bottom: 6px;
+      color: #ccc;
+    }
+    .skill-pct { color: var(--muted); }
+    .skill-bar { height: 3px; background: var(--border); border-radius: 2px; }
+    .skill-fill {
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      border-radius: 2px;
+      transition: width 1s ease;
+    }
+
+    /* ─── PORTFOLIO PAGE ─── */
+    .proj-card {
+      background: var(--card2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 2rem;
+      cursor: pointer;
+      transition: all 0.25s;
+      position: relative;
+      overflow: hidden;
+    }
+    .proj-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      opacity: 0;
+      transition: opacity 0.25s;
+    }
+    .proj-card:hover { border-color: #3a3a3a; transform: translateY(-3px); }
+    .proj-card:hover::before { opacity: 1; }
+    .proj-num { font-size: 48px; font-weight: 600; color: var(--border); line-height: 1; margin-bottom: 1rem; }
+    .proj-title { font-size: 20px; font-weight: 500; margin-bottom: 0.25rem; }
+    .proj-role { font-size: 12px; color: var(--muted); letter-spacing: 1px; text-transform: uppercase; }
+    .proj-desc { font-size: 14px; color: #aaa; margin-top: 0.75rem; line-height: 1.7; }
+    .proj-arrow {
+      position: absolute;
+      bottom: 1.5rem; right: 1.5rem;
+      font-size: 18px;
+      color: var(--muted);
+      transition: color 0.2s, transform 0.2s;
+    }
+    .proj-card:hover .proj-arrow { color: var(--accent); transform: translate(3px, -3px); }
+
+    /* ─── PROJECT DETAIL ─── */
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      color: var(--muted);
+      cursor: pointer;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+      transition: color 0.2s;
+    }
+    .back-btn:hover { color: var(--accent); }
+
+    .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin-top: 0.75rem; }
+    .process-step {
+      background: #111;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.25rem;
+      text-align: center;
+    }
+    .process-step-label {
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--accent2);
+      margin-bottom: 0.5rem;
+    }
+    .process-step p { font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+    .img-placeholder {
+      margin-top: 1.5rem;
+      background: #111;
+      border: 1px dashed var(--border);
+      border-radius: 10px;
+      height: 240px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      font-size: 13px;
+      letter-spacing: 1px;
+    }
+
+    .reflection-box {
+      background: #111;
+      border-left: 2px solid var(--accent2);
+      border-radius: 0 8px 8px 0;
+      padding: 1.25rem 1.5rem;
+      font-size: 14px;
+      color: #bbb;
+      line-height: 1.8;
+    }
+
+    /* ─── CONTACT PAGE ─── */
+    .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2.5rem; }
+    .contact-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+    }
+    .contact-item-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+    .contact-item-val { font-size: 14px; color: var(--text); }
+
+    .form-group { margin-bottom: 1rem; }
+    .form-group label { display: block; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      background: #1a1a1a;
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 0.8rem 1rem;
+      border-radius: 6px;
+      font-size: 14px;
+      font-family: var(--font);
+      transition: border-color 0.2s;
+      outline: none;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus { border-color: var(--accent); }
+    .form-group textarea { height: 130px; resize: vertical; }
+
+    /* ─── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 1.5rem 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: var(--muted);
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 600px) {
+      h1 { font-size: 38px; }
+      h2 { font-size: 26px; }
+      nav { padding: 0 1.25rem; }
+      .nav-links { gap: 1.25rem; }
+      .container { padding: 2.5rem 1.25rem; }
+      .hero { padding: 3rem 0 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo" onclick="show('home')">G.</div>
+  <div class="nav-links">
+    <a id="nav-home"      onclick="show('home')"      class="active">Home</a>
+    <a id="nav-resume"    onclick="show('resume')">Resume</a>
+    <a id="nav-portfolio" onclick="show('portfolio')">Portfolio</a>
+    <a id="nav-contact"   onclick="show('contact')">Contact</a>
+  </div>
+</nav>
+
+<!-- ══════════ HOME ══════════ -->
+<div id="home" class="page active">
+  <div class="container">
+    <div class="hero">
+      <div class="intro-bar"></div>
+      <p class="label" style="margin-bottom:1rem;">UI/UX Designer &amp; Web Developer</p>
+      <h1>Hi, I'm<br><span class="accent-text">Gazel.</span></h1>
+      <p class="hero-sub">I design and build clean, user-centered digital experiences — from interfaces that feel intuitive to websites that communicate with clarity and purpose.</p>
+      <div class="btn-group">
+        <span class="btn" onclick="show('portfolio')">View Work</span>
+        <span class="btn btn2" onclick="show('contact')">Get in Touch</span>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+    <h2>What I do</h2>
+    <p class="muted" style="margin-bottom:1.5rem;font-size:15px;">A blend of design thinking and technical execution.</p>
+
+    <div class="grid-3" style="margin-top:1.25rem;">
+      <div class="card">
+        <div class="what-icon" style="color:var(--accent);">◈</div>
+        <div class="what-title">UI/UX Design</div>
+        <div class="what-desc">User research, wireframing, prototyping, and high-fidelity interfaces that prioritize clarity, accessibility, and usability.</div>
+      </div>
+      <div class="card">
+        <div class="what-icon" style="color:var(--accent2);">◇</div>
+        <div class="what-title">Web Development</div>
+        <div class="what-desc">Front-end development with HTML, CSS, and JavaScript — translating designs into responsive, functional, real-world websites.</div>
+      </div>
+      <div class="card">
+        <div class="what-icon" style="color:var(--accent);">◉</div>
+        <div class="what-title">Visual Branding</div>
+        <div class="what-desc">Visual identity and brand systems that are intentional, consistent, and built to communicate the right message.</div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <span>Gazel — UI/UX Designer &amp; Web Developer</span>
+    <span>Interactive Multimedia · Algonquin College</span>
+  </footer>
+</div>
+
+<!-- ══════════ RESUME ══════════ -->
+<div id="resume" class="page">
+  <div class="container">
+    <h2>Resume</h2>
+    <p class="muted" style="margin-bottom:2.5rem;">Interactive Multimedia — Algonquin College</p>
+
+    <div class="resume-section">
+      <div class="section-label">Profile</div>
+      <p style="font-size:15px;line-height:1.9;color:#ccc;max-width:680px;">
+        <!-- ✏️ Replace this with YOUR actual profile summary -->
+        A motivated UI/UX Designer and Web Developer with a background in Interactive Multimedia. I create digital experiences that are visually clean, user-centered, and purposeful — combining design thinking with hands-on development skills to deliver work that is both beautiful and functional.
+      </p>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="resume-section">
+      <div class="section-label">Education</div>
+      <div class="resume-item">
+        <div>
+          <div class="ri-title">Interactive Multimedia</div>
+          <div class="ri-sub">Algonquin College — Ottawa, ON</div>
+        </div>
+        <div class="ri-date">2024 – Present</div>
+      </div>
+      <!-- ✏️ Add more education rows here if needed -->
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="resume-section">
+      <div class="section-label">Experience</div>
+      <!-- ✏️ Replace or add your real experience below -->
+      <div class="resume-item">
+        <div>
+          <div class="ri-title">Freelance Web &amp; UX Projects</div>
+          <div class="ri-sub">Self-initiated — Personal &amp; Academic Work</div>
+        </div>
+        <div class="ri-date">2023 – Present</div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="resume-section">
+      <div class="section-label">Skills</div>
+      <div class="grid-2" style="margin-top:1rem;">
+        <div>
+          <div class="skill-row">
+            <div class="skill-label"><span>Figma / Prototyping</span><span class="skill-pct">90%</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-label"><span>HTML / CSS</span><span class="skill-pct">85%</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-label"><span>JavaScript</span><span class="skill-pct">70%</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div>
+          </div>
+        </div>
+        <div>
+          <div class="skill-row">
+            <div class="skill-label"><span>Adobe CC (Ps / Ai / Id)</span><span class="skill-pct">80%</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-label"><span>UX Research</span><span class="skill-pct">75%</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-label"><span>Responsive Design</span><span class="skill-pct">85%</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="resume-section">
+      <div class="section-label">Software &amp; Tools</div>
+      <div class="tags" style="margin-top:0.25rem;">
+        <span class="tag hi">Figma</span>
+        <span class="tag hi">HTML / CSS</span>
+        <span class="tag hi">JavaScript</span>
+        <span class="tag">Adobe Photoshop</span>
+        <span class="tag">Adobe Illustrator</span>
+        <span class="tag">InDesign</span>
+        <span class="tag">Webflow</span>
+        <span class="tag">VS Code</span>
+        <span class="tag">Git / GitHub</span>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <span>Gazel — UI/UX Designer &amp; Web Developer</span>
+    <span>Interactive Multimedia · Algonquin College</span>
+  </footer>
+</div>
+
+<!-- ══════════ PORTFOLIO LIST ══════════ -->
+<div id="portfolio" class="page">
+  <div class="container">
+    <h2>Portfolio</h2>
+    <p class="muted" style="margin-bottom:2.5rem;font-size:15px;">Three selected projects — click any to explore the full case study and process.</p>
+
+    <div class="grid-3">
+      <div class="proj-card" onclick="show('p1')">
+        <div class="proj-num">01</div>
+        <div class="proj-title">Personal Website</div>
+        <div class="proj-role">UX Design · Web Development</div>
+        <div class="proj-desc">A self-initiated project to design and develop a personal portfolio website from scratch, built with intentional branding and clean code.</div>
+        <div class="tags"><span class="tag hi">HTML/CSS</span><span class="tag">Figma</span><span class="tag">JS</span></div>
+        <div class="proj-arrow">↗</div>
+      </div>
+
+      <div class="proj-card" onclick="show('p2')">
+        <div class="proj-num">02</div>
+        <div class="proj-title">Clothing Store</div>
+        <div class="proj-role">UI Design · E-Commerce UX</div>
+        <div class="proj-desc">An e-commerce clothing store with a focus on visual hierarchy, clear navigation, and a brand identity that feels premium yet accessible.</div>
+        <div class="tags"><span class="tag hi">Figma</span><span class="tag">HTML/CSS</span><span class="tag">Branding</span></div>
+        <div class="proj-arrow">↗</div>
+      </div>
+
+      <div class="proj-card" onclick="show('p3')">
+        <div class="proj-num">03</div>
+        <div class="proj-title">Travel Website</div>
+        <div class="proj-role">UI Design · Web Development</div>
+        <div class="proj-desc">A travel discovery website designed to inspire exploration with immersive visuals, intuitive architecture, and a seamless browsing experience.</div>
+        <div class="tags"><span class="tag hi">HTML/CSS</span><span class="tag">Figma</span><span class="tag">UX Research</span></div>
+        <div class="proj-arrow">↗</div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <span>Gazel — UI/UX Designer &amp; Web Developer</span>
+    <span>Interactive Multimedia · Algonquin College</span>
+  </footer>
+</div>
+
+<!-- ══════════ PROJECT 1 ══════════ -->
+<div id="p1" class="page">
+  <div class="container">
+    <div class="back-btn" onclick="show('portfolio')">← Back to Portfolio</div>
+    <p class="label" style="margin-bottom:0.5rem;">Project 01</p>
+    <h2>Personal Website</h2>
+    <div class="tags"><span class="tag hi">Role: Designer &amp; Developer</span><span class="tag">HTML/CSS</span><span class="tag">JavaScript</span><span class="tag">Figma</span></div>
+
+    <p style="font-size:15px;line-height:1.9;color:#ccc;margin-top:1.5rem;max-width:700px;">
+      <!-- ✏️ Replace with your real project description -->
+      A self-initiated project to design, prototype, and develop a personal portfolio website. The goal was to create a professional digital presence that reflects my design sensibility and showcases my work effectively to potential employers and collaborators.
+    </p>
+
+    <div class="divider"></div>
+
+    <h4>My Role &amp; Contributions</h4>
+    <!-- ✏️ Describe what YOU specifically did -->
+    <p style="font-size:14px;line-height:1.8;color:#bbb;">Replace this with a description of your specific contributions — wireframing, design decisions, coding choices, content strategy, and any challenges you solved along the way.</p>
+
+    <div style="margin-top:2rem;">
+      <h4>Design Process</h4>
+      <div class="process-grid">
+        <div class="process-step">
+          <div class="process-step-label">Research</div>
+          <!-- ✏️ Describe your research -->
+          <p>Add notes on your research, competitive analysis, or inspiration sources here.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-step-label">Wireframes</div>
+          <!-- ✏️ Describe or upload wireframes -->
+          <p>Describe your wireframing approach, or add a wireframe image below.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-step-label">Final Design</div>
+          <!-- ✏️ Describe your final output -->
+          <p>Describe the final design decisions and what you're most proud of.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ✏️ Replace this placeholder with a real <img> tag or multiple images -->
+    <div class="img-placeholder">[ Add project screenshots or mockup images here ]</div>
+    <!-- Example: <img src="images/project1-screen.jpg" alt="Personal Website Screenshot" style="width:100%;border-radius:10px;margin-top:1.5rem;"> -->
+
+    <div style="margin-top:2rem;">
+      <h4>Process &amp; Reflection</h4>
+      <div class="reflection-box">
+        <!-- ✏️ Replace with your genuine reflection -->
+        Replace this with your honest reflection: What did you learn from this project? What decisions worked well? What would you do differently if you had more time? How did it help you grow as a designer or developer?
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <span>Gazel — UI/UX Designer &amp; Web Developer</span>
+    <span><span class="back-btn" style="display:inline;font-size:12px;" onclick="show('portfolio')">← All Projects</span></span>
+  </footer>
+</div>
+
+<!-- ══════════ PROJECT 2 ══════════ -->
+<div id="p2" class="page">
+  <div class="container">
+    <div class="back-btn" onclick="show('portfolio')">← Back to Portfolio</div>
+    <p class="label" style="margin-bottom:0.5rem;">Project 02</p>
+    <h2>Clothing Store</h2>
+    <div class="tags"><span class="tag hi">Role: UI Designer</span><span class="tag">Figma</span><span class="tag">HTML/CSS</span><span class="tag">Branding</span></div>
+
+    <p style="font-size:15px;line-height:1.9;color:#ccc;margin-top:1.5rem;max-width:700px;">
+      <!-- ✏️ Replace with your real project description -->
+      An e-commerce clothing store concept focused on delivering a compelling visual experience — clean product presentation, intuitive navigation, and a brand identity that feels both premium and accessible to a wide audience.
+    </p>
+
+    <div class="divider"></div>
+
+    <h4>My Role &amp; Contributions</h4>
+    <!-- ✏️ Describe what YOU specifically did -->
+    <p style="font-size:14px;line-height:1.8;color:#bbb;">Replace this with your specific role — visual design, layout architecture, user flow planning, branding choices, typography system, etc.</p>
+
+    <div style="margin-top:2rem;">
+      <h4>Design Process</h4>
+      <div class="process-grid">
+        <div class="process-step">
+          <div class="process-step-label">Target Audience</div>
+          <!-- ✏️ Your audience research -->
+          <p>Who is this store for? Age, style preferences, shopping habits, and needs.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-step-label">Colour &amp; Typography</div>
+          <!-- ✏️ Your brand choices -->
+          <p>Describe your colour palette selections and typography system and why you chose them.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-step-label">Iterations</div>
+          <!-- ✏️ Your design iterations -->
+          <p>Show or describe how your design evolved from early drafts to the final version.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ✏️ Replace this placeholder with a real <img> tag -->
+    <div class="img-placeholder">[ Add project screenshots or mockup images here ]</div>
+
+    <div style="margin-top:2rem;">
+      <h4>Process &amp; Reflection</h4>
+      <div class="reflection-box">
+        <!-- ✏️ Replace with your genuine reflection -->
+        Replace with your honest reflection: What inspired the visual direction? What challenges did you face with the e-commerce UX? What would you improve with more time?
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <span>Gazel — UI/UX Designer &amp; Web Developer</span>
+    <span><span class="back-btn" style="display:inline;font-size:12px;" onclick="show('portfolio')">← All Projects</span></span>
+  </footer>
+</div>
+
+<!-- ══════════ PROJECT 3 ══════════ -->
+<div id="p3" class="page">
+  <div class="container">
+    <div class="back-btn" onclick="show('portfolio')">← Back to Portfolio</div>
+    <p class="label" style="margin-bottom:0.5rem;">Project 03</p>
+    <h2>Travel Website</h2>
+    <div class="tags"><span class="tag hi">Role: Designer &amp; Developer</span><span class="tag">HTML/CSS</span><span class="tag">Figma</span><span class="tag">UX Research</span></div>
+
+    <p style="font-size:15px;line-height:1.9;color:#ccc;margin-top:1.5rem;max-width:700px;">
+      <!-- ✏️ Replace with your real project description -->
+      A travel discovery website designed to inspire users to explore new destinations. The project focused on immersive visual storytelling, intuitive information architecture, and a user experience that feels effortless — like the journey itself.
+    </p>
+
+    <div class="divider"></div>
+
+    <h4>My Role &amp; Contributions</h4>
+    <!-- ✏️ Describe what YOU specifically did -->
+    <p style="font-size:14px;line-height:1.8;color:#bbb;">Replace this with what you designed and built — layout decisions, navigation structure, visual choices, and any development work you did to bring it to life.</p>
+
+    <div style="margin-top:2rem;">
+      <h4>Design Process</h4>
+      <div class="process-grid">
+        <div class="process-step">
+          <div class="process-step-label">User Research</div>
+          <!-- ✏️ Your research notes -->
+          <p>What did you learn about how people plan and browse travel content online?</p>
+        </div>
+        <div class="process-step">
+          <div class="process-step-label">Sitemap / IA</div>
+          <!-- ✏️ Your IA decisions -->
+          <p>How did you structure the content and navigation to guide users through the site?</p>
+        </div>
+        <div class="process-step">
+          <div class="process-step-label">Final Build</div>
+          <!-- ✏️ Final product notes -->
+          <p>Describe the finished product — key design choices, features, and what you're proud of.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ✏️ Replace this placeholder with a real <img> tag -->
+    <div class="img-placeholder">[ Add project screenshots or mockup images here ]</div>
+
+    <div style="margin-top:2rem;">
+      <h4>Process &amp; Reflection</h4>
+      <div class="reflection-box">
+        <!-- ✏️ Replace with your genuine reflection -->
+        Replace with your honest reflection: What worked well in the design? What challenges came up with layout or responsiveness? What would you approach differently next time?
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <span>Gazel — UI/UX Designer &amp; Web Developer</span>
+    <span><span class="back-btn" style="display:inline;font-size:12px;" onclick="show('portfolio')">← All Projects</span></span>
+  </footer>
+</div>
+
+<!-- ══════════ CONTACT ══════════ -->
+<div id="contact" class="page">
+  <div class="container">
+    <h2>Let's Connect</h2>
+    <p class="muted" style="margin-bottom:2.5rem;font-size:15px;">Open to internships, freelance projects, and collaborations. Feel free to reach out.</p>
+
+    <div class="contact-grid">
+      <div class="contact-item">
+        <div class="contact-item-label">Email</div>
+        <!-- ✏️ Replace with your real email -->
+        <div class="contact-item-val">your.email@algonquincollege.com</div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-label">Location</div>
+        <div class="contact-item-val">Ottawa / Gloucester, ON</div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-label">LinkedIn</div>
+        <!-- ✏️ Replace with your real LinkedIn URL -->
+        <div class="contact-item-val">linkedin.com/in/gazel</div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <h3 style="font-size:16px;font-weight:400;color:var(--muted);margin-bottom:1.5rem;">Or send a message</h3>
+    <div class="form-group">
+      <label>Name</label>
+      <input type="text" placeholder="Your name" />
+    </div>
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email" placeholder="your@email.com" />
+    </div>
+    <div class="form-group">
+      <label>Message</label>
+      <textarea placeholder="What are you working on?"></textarea>
+    </div>
+    <span class="btn" style="margin-top:0.5rem;">Send Message</span>
+  </div>
+
+  <footer>
+    <span>Gazel — UI/UX Designer &amp; Web Developer</span>
+    <span>Interactive Multimedia · Algonquin College</span>
+  </footer>
+</div>
+
+<script>
+  function show(id) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+    const navMap = { home:'nav-home', resume:'nav-resume', portfolio:'nav-portfolio', p1:'nav-portfolio', p2:'nav-portfolio', p3:'nav-portfolio', contact:'nav-contact' };
+    const navEl = document.getElementById(navMap[id]);
+    if (navEl) navEl.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+</body>
+</html>
