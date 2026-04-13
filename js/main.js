@@ -7,6 +7,7 @@ const navMap = {
   p3: 'nav-portfolio',
   p4: 'nav-portfolio',
   p5: 'nav-portfolio',
+  p6: 'nav-portfolio',
   contact: 'nav-contact'
 };
 
