@@ -720,6 +720,7 @@ footer {
   .nav-links { gap: 1.5rem; }
   .hero { grid-template-columns: 1fr; min-height: auto; }
   .hero-left { padding: 3rem 1.5rem; border-right: none; border-bottom: 1px solid var(--border); }
+  .logo-img {height: 22px;}
   .hero-right { min-height: 60vw; }
   .work-teaser { padding: 3rem 1.5rem; }
   .work-teaser-grid { grid-template-columns: 1fr 1fr; }
