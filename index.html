@@ -3,14 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gazel — UI/UX Designer & Web Developer</title>
+  <title>Gazel V.R — UX Designer & Front-End Developer</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
-<!-- ══ NAV ══ -->
 <nav>
-  <div class="logo" onclick="show('home')">GZ.</div>
+  <div class="logo" onclick="show('home')">GA<span>Z</span>EL</div>
   <div class="nav-links">
     <a id="nav-home"      onclick="show('home')"      class="active">Home</a>
     <a id="nav-resume"    onclick="show('resume')">Resume</a>
@@ -19,16 +18,14 @@
   </div>
 </nav>
 
-<!-- ══════════ HOME ══════════ -->
 <div id="home" class="page active">
 
-  <!-- Hero: split layout with photo -->
   <section class="hero">
     <div class="hero-left">
-      <span class="eyebrow">UI/UX Designer &amp; Web Developer</span>
+      <span class="eyebrow">UX Designer &amp; Front-End Developer</span>
       <h1>Design<br>that <span class="accent-text">works.</span></h1>
       <p class="hero-tagline">
-        I'm Gazel — I create digital experiences that are clean, intentional, and built to communicate. From user interfaces to fully coded websites, I bring ideas to life with purpose.
+        I'm Gazel — I create clear, accessible, and functional digital experiences by combining user-centered design thinking with clean, responsive front-end development.
       </p>
       <div class="btn-group">
         <span class="btn btn-fill" onclick="show('portfolio')">See My Work</span>
@@ -37,14 +34,14 @@
       <div class="hero-stat-row">
         <div>
           <div class="hero-stat-num accent-text">3</div>
-          <div class="hero-stat-label">Projects</div>
+          <div class="hero-stat-label">Live Projects</div>
         </div>
         <div>
-          <div class="hero-stat-num">UX</div>
+          <div class="hero-stat-num" style="color:var(--accent2);">UX</div>
           <div class="hero-stat-label">Focus Area</div>
         </div>
         <div>
-          <div class="hero-stat-num accent2-text">AC</div>
+          <div class="hero-stat-num" style="color:var(--accent3);">AC</div>
           <div class="hero-stat-label">Algonquin</div>
         </div>
       </div>
@@ -53,18 +50,17 @@
     <div class="hero-right">
       <img
         src="images/gazel.png"
-        alt="Gazel — UI/UX Designer"
+        alt="Gazel V.R — UX Designer & Front-End Developer"
         class="hero-photo"
       />
       <div class="hero-photo-overlay"></div>
       <div class="hero-name-tag">
-        <span>Gazel</span>
-        <small>UI/UX · Web Dev</small>
+        <span>Gazel V.R</span>
+        <small>UX Design · Front-End Dev</small>
       </div>
     </div>
   </section>
 
-  <!-- Work teaser -->
   <section class="work-teaser">
     <div style="max-width:1000px;margin:0 auto;">
       <span class="eyebrow">Selected Work</span>
@@ -72,7 +68,6 @@
       <p class="muted" style="font-size:15px;margin-top:.5rem;margin-bottom:0;font-weight:300;">Three live projects — hover to preview, click to explore.</p>
 
       <div class="work-teaser-grid">
-        <!-- Project 1 thumbnail -->
         <div class="work-thumb" onclick="show('p1')" title="Personal Website">
           <img src="images/project1-preview.png" alt="Personal Website project preview" />
           <div class="work-thumb-overlay">
@@ -82,7 +77,6 @@
           <div class="work-thumb-arrow">↗</div>
         </div>
 
-        <!-- Project 2 thumbnail -->
         <div class="work-thumb" onclick="show('p2')" title="CMS Clothing Store">
           <img src="images/project2-preview.png" alt="CMS Clothing Store project preview" />
           <div class="work-thumb-overlay">
@@ -92,9 +86,8 @@
           <div class="work-thumb-arrow">↗</div>
         </div>
 
-        <!-- Project 3 thumbnail -->
         <div class="work-thumb" onclick="show('p3')" title="Travel Website">
-          <img src="images/project3-preview.png" alt="Cancún Travel Website project preview" />
+          <img src="images/project3-preview.png" alt="Discover Cancún project preview" />
           <div class="work-thumb-overlay">
             <div class="work-thumb-num">03</div>
             <div class="work-thumb-title">Travel Website</div>
@@ -105,7 +98,6 @@
     </div>
   </section>
 
-  <!-- What I do -->
   <section class="what-section">
     <div style="max-width:1000px;margin:0 auto;">
       <div class="divider"></div>
@@ -114,74 +106,66 @@
       <div class="grid-3">
         <div class="what-card">
           <div class="what-icon c1">◈</div>
-          <div class="what-title">UI/UX Design</div>
+          <div class="what-title">UX Design</div>
           <div class="what-desc">User research, wireframing, prototyping, and high-fidelity interfaces that prioritize clarity, accessibility, and real user needs.</div>
         </div>
         <div class="what-card">
           <div class="what-icon c2">&#10022;</div>
-          <div class="what-title">Web Development</div>
-          <div class="what-desc">Front-end development with HTML, CSS, and JavaScript — translating designs into responsive, functional, live websites.</div>
+          <div class="what-title">Front-End Development</div>
+          <div class="what-desc">HTML, CSS, and JavaScript — translating designs into responsive, functional, and accessible live websites built to perform.</div>
         </div>
         <div class="what-card">
           <div class="what-icon c3">◉</div>
           <div class="what-title">Visual Branding</div>
-          <div class="what-desc">Visual identity and brand systems built to be intentional, consistent, and communicate the right message to the right audience.</div>
+          <div class="what-desc">Visual identity systems built to be intentional and consistent — communicating the right message to the right audience.</div>
         </div>
       </div>
     </div>
   </section>
 
   <footer>
-    <span>Gazel — UI/UX Designer &amp; Web Developer</span>
-    <span>Interactive Multimedia · Algonquin College · 2026</span>
+    <span>Gazel V.R — UX Designer &amp; Front-End Developer</span>
+    <span>Interactive Media Design · Algonquin College · 2026</span>
   </footer>
 </div>
 
-<!-- ══════════ RESUME ══════════ -->
 <div id="resume" class="page">
   <div class="container-sm">
     <span class="eyebrow">Professional</span>
     <h2 style="margin-bottom:2.5rem;">Resume</h2>
 
-    <!-- Profile -->
     <div class="divider" style="margin-top:0;"></div>
     <div style="margin-bottom:2.5rem;">
       <div class="section-label">Profile</div>
-      <!-- ✏️ REPLACE with your own summary -->
-      <p style="font-size:15px;line-height:1.9;color:#ccc;font-weight:300;">
-        A motivated UI/UX Designer and Web Developer studying Interactive Multimedia at Algonquin College. I create digital experiences that are visually clean, user-centered, and purposeful — combining design thinking with hands-on development skills to deliver work that is both functional and memorable.
+      <p style="font-size:15px;line-height:1.9;color:var(--muted2);font-weight:300;">
+        I am a UX designer and front-end developer focused on creating clear, accessible, and functional digital experiences. I combine user-centered design thinking with clean, responsive front-end implementation to deliver practical, usable solutions. Currently studying Interactive Media Design at Algonquin College, I bring a structured, human-centered approach to every project I take on.
       </p>
     </div>
 
-    <!-- Education -->
     <div class="divider"></div>
     <div style="margin-bottom:2.5rem;">
       <div class="section-label">Education</div>
       <div class="resume-item">
         <div>
-          <div class="ri-title">Interactive Multimedia</div>
+          <div class="ri-title">Interactive Media Design</div>
           <div class="ri-sub">Algonquin College — Ottawa, ON</div>
         </div>
         <div class="ri-date">2024 – Present</div>
       </div>
-      <!-- ✏️ Add more education if applicable -->
     </div>
 
-    <!-- Experience -->
     <div class="divider"></div>
     <div style="margin-bottom:2.5rem;">
       <div class="section-label">Experience</div>
-      <!-- ✏️ Replace with your actual experience -->
       <div class="resume-item">
         <div>
           <div class="ri-title">Freelance Web &amp; UX Projects</div>
-          <div class="ri-sub">Self-initiated — Personal &amp; Academic Work</div>
+          <div class="ri-sub">Self-initiated — Academic &amp; Personal Work</div>
         </div>
-        <div class="ri-date">2023 – Present</div>
+        <div class="ri-date">2024 – Present</div>
       </div>
     </div>
 
-    <!-- Skills -->
     <div class="divider"></div>
     <div style="margin-bottom:2.5rem;">
       <div class="section-label">Skills</div>
@@ -217,7 +201,6 @@
       </div>
     </div>
 
-    <!-- Tools -->
     <div class="divider"></div>
     <div>
       <div class="section-label">Software &amp; Tools</div>
@@ -237,12 +220,11 @@
   </div>
 
   <footer>
-    <span>Gazel — UI/UX Designer &amp; Web Developer</span>
-    <span>Interactive Multimedia · Algonquin College · 2026</span>
+    <span>Gazel V.R — UX Designer &amp; Front-End Developer</span>
+    <span>Interactive Media Design · Algonquin College · 2026</span>
   </footer>
 </div>
 
-<!-- ══════════ PORTFOLIO LIST ══════════ -->
 <div id="portfolio" class="page">
   <div class="container">
     <span class="eyebrow">Selected Work</span>
@@ -250,7 +232,6 @@
     <p class="muted" style="font-size:15px;margin-bottom:2.5rem;font-weight:300;">Three live projects — click any to explore the full case study and process.</p>
 
     <div class="grid-3">
-      <!-- Project 1 -->
       <div class="proj-card" onclick="show('p1')">
         <div class="proj-thumb">
           <img src="images/project1-preview.png" alt="Personal Website Screenshot" />
@@ -259,14 +240,13 @@
         <div class="proj-body">
           <div class="proj-num">01</div>
           <div class="proj-title">Personal Website</div>
-          <div class="proj-role">UX Design · Web Development</div>
-          <div class="proj-desc">A self-coded personal portfolio site designed and built from scratch with custom HTML, CSS, and JavaScript.</div>
-          <div class="tags"><span class="tag hi">HTML/CSS</span><span class="tag">Figma</span><span class="tag">JS</span></div>
+          <div class="proj-role">UX Design · Front-End Development</div>
+          <div class="proj-desc">A self-coded personal portfolio site designed and built from scratch with HTML, CSS, and JavaScript.</div>
+          <div class="tags"><span class="tag hi">HTML/CSS</span><span class="tag">Figma</span><span class="tag">JavaScript</span></div>
         </div>
         <div class="proj-arrow">↗</div>
       </div>
 
-      <!-- Project 2 -->
       <div class="proj-card" onclick="show('p2')">
         <div class="proj-thumb">
           <img src="images/project2-preview.png" alt="CMS Clothing Store Screenshot" />
@@ -282,18 +262,17 @@
         <div class="proj-arrow">↗</div>
       </div>
 
-      <!-- Project 3 -->
       <div class="proj-card" onclick="show('p3')">
         <div class="proj-thumb">
-          <img src="images/project3-preview.png" alt="Cancún Travel Website Screenshot" />
+          <img src="images/project3-preview.png" alt="Discover Cancún Travel Website Screenshot" />
           <div class="proj-thumb-overlay"></div>
         </div>
         <div class="proj-body">
           <div class="proj-num">03</div>
           <div class="proj-title">Discover Cancún</div>
           <div class="proj-role">UI Design · Web Development</div>
-          <div class="proj-desc">A travel discovery website for Cancún featuring immersive visuals, search functionality, and destination content.</div>
-          <div class="tags"><span class="tag hi">HTML/CSS</span><span class="tag">WordPress</span><span class="tag">UX Research</span></div>
+          <div class="proj-desc">A travel discovery website featuring immersive visuals, search functionality, and curated destination content.</div>
+          <div class="tags"><span class="tag hi">WordPress</span><span class="tag">HTML/CSS</span><span class="tag">UX Research</span></div>
         </div>
         <div class="proj-arrow">↗</div>
       </div>
@@ -301,17 +280,16 @@
   </div>
 
   <footer>
-    <span>Gazel — UI/UX Designer &amp; Web Developer</span>
-    <span>Interactive Multimedia · Algonquin College · 2026</span>
+    <span>Gazel V.R — UX Designer &amp; Front-End Developer</span>
+    <span>Interactive Media Design · Algonquin College · 2026</span>
   </footer>
 </div>
 
-<!-- ══════════ PROJECT 1: Personal Website ══════════ -->
 <div id="p1" class="page">
   <div class="container-sm">
     <span class="back-btn" onclick="show('portfolio')">← Back to Portfolio</span>
 
-    <span class="eyebrow">Project 01 · UX Design · Web Development</span>
+    <span class="eyebrow">Project 01 · UX Design · Front-End Development</span>
     <h2 style="margin-bottom:1rem;">Personal Website</h2>
     <div class="tags">
       <span class="tag hi">Role: Designer &amp; Developer</span>
@@ -322,9 +300,8 @@
 
     <img src="images/project1-preview.png" alt="Personal Website" class="proj-hero-img" style="margin-top:2rem;" />
 
-    <p style="font-size:15px;line-height:1.9;color:#ccc;font-weight:300;">
-      <!-- ✏️ Replace with your description -->
-      A fully self-coded personal portfolio website designed and developed from scratch. The goal was to create a professional digital presence that reflects my design sensibility and communicates my skills clearly to potential employers.
+    <p style="font-size:15px;line-height:1.9;color:var(--muted2);font-weight:300;">
+      A fully self-coded personal portfolio website designed and developed from scratch. The goal was to create a professional digital presence that reflects my design sensibility — clean, structured, and human-centered — while demonstrating my front-end development skills through a fully custom codebase with no templates.
     </p>
 
     <div class="live-link-banner" style="margin-top:1.5rem;">
@@ -338,8 +315,7 @@
     <div class="divider"></div>
 
     <h3 style="margin-bottom:1rem;font-size:16px;color:var(--muted2);font-weight:400;letter-spacing:1px;text-transform:uppercase;">My Role &amp; Contributions</h3>
-    <!-- ✏️ Replace with your own text -->
-    <p style="font-size:14px;line-height:1.9;color:#bbb;font-weight:300;">Replace this with a description of your specific contributions — wireframing decisions, layout choices, coding challenges you solved, typography and colour decisions, and anything else that demonstrates your thinking as a designer and developer.</p>
+    <p style="font-size:14px;line-height:1.9;color:var(--muted2);font-weight:300;">I was responsible for the full project — from initial concept and wireframes through to final coded output. I made all layout and typography decisions, handled the visual hierarchy, wrote every line of HTML, CSS, and JavaScript, and deployed the site to GitHub Pages. The design was driven by the same brand principles I apply across all my work: clear, accessible, and structured.</p>
 
     <div style="margin-top:2.5rem;">
       <h3 style="margin-bottom:1rem;font-size:16px;color:var(--muted2);font-weight:400;letter-spacing:1px;text-transform:uppercase;">Design Process</h3>
@@ -347,20 +323,17 @@
         <div class="process-step">
           <div class="process-step-num">01</div>
           <div class="process-step-label">Research</div>
-          <!-- ✏️ Fill in -->
-          <p>Add notes on your research, competitive analysis, or inspiration sources here.</p>
+          <p>I studied portfolio sites from UX designers and front-end developers to understand conventions around navigation, content hierarchy, and how to communicate skills effectively to a hiring audience.</p>
         </div>
         <div class="process-step">
           <div class="process-step-num">02</div>
           <div class="process-step-label">Wireframes</div>
-          <!-- ✏️ Fill in -->
-          <p>Describe your wireframing process, or reference sketches/wireframe images.</p>
+          <p>I wireframed page layouts in Figma before touching code, mapping out the homepage, project pages, and contact section to ensure the structure was logical and easy to navigate.</p>
         </div>
         <div class="process-step">
           <div class="process-step-num">03</div>
-          <div class="process-step-label">Final Design</div>
-          <!-- ✏️ Fill in -->
-          <p>Describe your final design decisions and what you're most proud of.</p>
+          <div class="process-step-label">Final Build</div>
+          <p>I translated the wireframes into a fully coded, responsive multi-page site — applying consistent typography, spacing, and colour choices that reflect my personal brand identity.</p>
         </div>
       </div>
     </div>
@@ -368,19 +341,17 @@
     <div style="margin-top:2.5rem;">
       <h3 style="margin-bottom:1rem;font-size:16px;color:var(--muted2);font-weight:400;letter-spacing:1px;text-transform:uppercase;">Reflection</h3>
       <div class="reflection-box">
-        <!-- ✏️ Replace with your genuine reflection -->
-        Replace this with your honest reflection: What did you learn building this? What design decisions worked well? What would you approach differently? How did it grow your skills as a designer and developer?
+        Building this site taught me how much design and development inform each other. Decisions I thought were purely visual — spacing, font weight, layout rhythm — had a direct impact on how readable and navigable the final product felt. Given more time, I would add more motion and interactivity to bring the experience to life further. This project gave me confidence in my ability to take a design from idea to deployed product entirely on my own.
       </div>
     </div>
   </div>
 
   <footer>
-    <span>Gazel — UI/UX Designer &amp; Web Developer</span>
+    <span>Gazel V.R — UX Designer &amp; Front-End Developer</span>
     <span><span class="back-btn" style="display:inline;font-size:11px;" onclick="show('portfolio')">← All Projects</span></span>
   </footer>
 </div>
 
-<!-- ══════════ PROJECT 2: CMS Clothing Store ══════════ -->
 <div id="p2" class="page">
   <div class="container-sm">
     <span class="back-btn" onclick="show('portfolio')">← Back to Portfolio</span>
@@ -396,8 +367,7 @@
 
     <img src="images/project2-preview.png" alt="CMS Clothing Store" class="proj-hero-img" style="margin-top:2rem;" />
 
-    <p style="font-size:15px;line-height:1.9;color:#ccc;font-weight:300;">
-      <!-- ✏️ Replace with your description -->
+    <p style="font-size:15px;line-height:1.9;color:var(--muted2);font-weight:300;">
       CMS (Thrifted Vintage) is a clothing e-commerce store built on Shopify. The project focused on building a cohesive brand identity — a distinctive logo with a red maple motif, a dark monochromatic aesthetic, and a shopping experience that feels premium yet approachable for vintage streetwear shoppers.
     </p>
 
@@ -412,8 +382,7 @@
     <div class="divider"></div>
 
     <h3 style="margin-bottom:1rem;font-size:16px;color:var(--muted2);font-weight:400;letter-spacing:1px;text-transform:uppercase;">My Role &amp; Contributions</h3>
-    <!-- ✏️ Replace with your own text -->
-    <p style="font-size:14px;line-height:1.9;color:#bbb;font-weight:300;">Replace with your specific role — visual design, brand identity creation, Shopify theme customization, product layout decisions, typography and colour choices, and anything else that demonstrates your thinking as a UI designer.</p>
+    <p style="font-size:14px;line-height:1.9;color:var(--muted2);font-weight:300;">I handled the full visual design and brand identity for CMS — including logo design, colour palette selection, typography choices, and Shopify theme customization. I structured the product layout to guide users through the catalog clearly, and made deliberate UI decisions to communicate a premium thrift aesthetic that resonates with the target demographic.</p>
 
     <div style="margin-top:2.5rem;">
       <h3 style="margin-bottom:1rem;font-size:16px;color:var(--muted2);font-weight:400;letter-spacing:1px;text-transform:uppercase;">Design Process</h3>
@@ -421,20 +390,17 @@
         <div class="process-step">
           <div class="process-step-num">01</div>
           <div class="process-step-label">Target Audience</div>
-          <!-- ✏️ Fill in -->
-          <p>Who is this store for? Age, style preferences, shopping habits, and needs.</p>
+          <p>The store targets young adults aged 18–30 interested in streetwear and sustainable fashion. I researched their visual preferences — raw, editorial imagery, dark tones, and minimal clutter — to inform every design decision.</p>
         </div>
         <div class="process-step">
           <div class="process-step-num">02</div>
           <div class="process-step-label">Brand &amp; Visual Identity</div>
-          <!-- ✏️ Fill in -->
-          <p>Describe your colour palette, logo rationale, typography decisions, and overall visual direction.</p>
+          <p>The CMS logo uses a bold red maple motif to signal Canadian roots, paired with a dark monochromatic palette and clean sans-serif typography. The result is a brand that feels established and intentional rather than DIY.</p>
         </div>
         <div class="process-step">
           <div class="process-step-num">03</div>
-          <div class="process-step-label">Iterations</div>
-          <!-- ✏️ Fill in -->
-          <p>Describe how the design evolved from early concepts to the final Shopify build.</p>
+          <div class="process-step-label">Shopify Build</div>
+          <p>I customized a Shopify theme to match the brand — adjusting layout sections, product grids, navigation structure, and typography settings to align with the visual system I had defined.</p>
         </div>
       </div>
     </div>
@@ -442,19 +408,17 @@
     <div style="margin-top:2.5rem;">
       <h3 style="margin-bottom:1rem;font-size:16px;color:var(--muted2);font-weight:400;letter-spacing:1px;text-transform:uppercase;">Reflection</h3>
       <div class="reflection-box">
-        <!-- ✏️ Replace with your genuine reflection -->
-        Replace with your honest reflection: What inspired the visual direction? What were the challenges of designing for an e-commerce UX? What worked well and what would you improve?
+        This project pushed me to think about UI design in a commercial context — where every visual decision has to support a business goal. Designing within Shopify's constraints was a useful challenge: it forced me to work systematically within an existing system rather than building from scratch. I'm proud of the brand identity I developed, and if I were to revisit it, I would push the editorial photography direction further to make the store feel even more distinct.
       </div>
     </div>
   </div>
 
   <footer>
-    <span>Gazel — UI/UX Designer &amp; Web Developer</span>
+    <span>Gazel V.R — UX Designer &amp; Front-End Developer</span>
     <span><span class="back-btn" style="display:inline;font-size:11px;" onclick="show('portfolio')">← All Projects</span></span>
   </footer>
 </div>
 
-<!-- ══════════ PROJECT 3: Discover Cancún ══════════ -->
 <div id="p3" class="page">
   <div class="container-sm">
     <span class="back-btn" onclick="show('portfolio')">← Back to Portfolio</span>
@@ -463,16 +427,15 @@
     <h2 style="margin-bottom:1rem;">Discover Cancún</h2>
     <div class="tags">
       <span class="tag hi">Role: Designer &amp; Developer</span>
-      <span class="tag">HTML / CSS</span>
       <span class="tag">WordPress</span>
+      <span class="tag">HTML / CSS</span>
       <span class="tag">UX Research</span>
     </div>
 
     <img src="images/project3-preview.png" alt="Discover Cancún Travel Website" class="proj-hero-img" style="margin-top:2rem;" />
 
-    <p style="font-size:15px;line-height:1.9;color:#ccc;font-weight:300;">
-      <!-- ✏️ Replace with your description -->
-      Discover Cancún is a travel website designed to inspire visitors to explore the destination. The project features a vibrant, colorful brand identity, an immersive hero section, a search function, and curated destination content — all designed to make trip planning feel exciting and effortless.
+    <p style="font-size:15px;line-height:1.9;color:var(--muted2);font-weight:300;">
+      Discover Cancún is a travel website designed to inspire visitors to explore the destination. The project features a vibrant, colourful brand identity, an immersive hero section with aerial photography, a search function, gallery, and curated destination content — all designed to make trip planning feel exciting and effortless.
     </p>
 
     <div class="live-link-banner">
@@ -486,8 +449,7 @@
     <div class="divider"></div>
 
     <h3 style="margin-bottom:1rem;font-size:16px;color:var(--muted2);font-weight:400;letter-spacing:1px;text-transform:uppercase;">My Role &amp; Contributions</h3>
-    <!-- ✏️ Replace with your own text -->
-    <p style="font-size:14px;line-height:1.9;color:#bbb;font-weight:300;">Replace with what you designed and built — the layout decisions, navigation structure, visual identity choices, search feature, and the development work that brought it to life.</p>
+    <p style="font-size:14px;line-height:1.9;color:var(--muted2);font-weight:300;">I designed and developed the full site — creating the Cancún wordmark, selecting the colourful multi-toned brand palette, building the layout structure in WordPress, and writing custom CSS to achieve the visual design. I also structured the information architecture to guide users from inspiration through to practical destination details.</p>
 
     <div style="margin-top:2.5rem;">
       <h3 style="margin-bottom:1rem;font-size:16px;color:var(--muted2);font-weight:400;letter-spacing:1px;text-transform:uppercase;">Design Process</h3>
@@ -495,20 +457,17 @@
         <div class="process-step">
           <div class="process-step-num">01</div>
           <div class="process-step-label">User Research</div>
-          <!-- ✏️ Fill in -->
-          <p>What did you learn about how people browse and plan travel online? Who is the target user?</p>
+          <p>I researched how people browse travel sites — prioritizing high-impact visuals, quick access to key information, and intuitive search. The target user is someone planning a first trip to Cancún looking for inspiration and practical guidance.</p>
         </div>
         <div class="process-step">
           <div class="process-step-num">02</div>
           <div class="process-step-label">Information Architecture</div>
-          <!-- ✏️ Fill in -->
-          <p>How did you structure the content, navigation, and pages to guide users through the site?</p>
+          <p>I structured the site around three core user needs: inspiration (hero and gallery), information (about and highlights), and action (search and booking). Navigation was kept minimal to reduce friction.</p>
         </div>
         <div class="process-step">
           <div class="process-step-num">03</div>
           <div class="process-step-label">Final Build</div>
-          <!-- ✏️ Fill in -->
-          <p>Key design decisions in the finished product and what you're most proud of achieving.</p>
+          <p>The finished site uses aerial photography, bold typography, and a vibrant multi-colour palette to evoke the energy of the destination. I'm most proud of the hero section and the custom Cancún wordmark that anchors the brand.</p>
         </div>
       </div>
     </div>
@@ -516,19 +475,17 @@
     <div style="margin-top:2.5rem;">
       <h3 style="margin-bottom:1rem;font-size:16px;color:var(--muted2);font-weight:400;letter-spacing:1px;text-transform:uppercase;">Reflection</h3>
       <div class="reflection-box">
-        <!-- ✏️ Replace with your genuine reflection -->
-        Replace with your honest reflection: What worked well in the design? What challenges came up with layout, responsiveness, or content? What would you approach differently with more time?
+        This project challenged me to design for a very different visual tone than my usual minimal aesthetic — bold, colourful, and expressive. Working in WordPress taught me how to extend a platform through custom CSS while working within its structural constraints. Looking back, I would invest more time in the mobile responsiveness and would refine the typography hierarchy to create a clearer reading experience on smaller screens.
       </div>
     </div>
   </div>
 
   <footer>
-    <span>Gazel — UI/UX Designer &amp; Web Developer</span>
+    <span>Gazel V.R — UX Designer &amp; Front-End Developer</span>
     <span><span class="back-btn" style="display:inline;font-size:11px;" onclick="show('portfolio')">← All Projects</span></span>
   </footer>
 </div>
 
-<!-- ══════════ CONTACT ══════════ -->
 <div id="contact" class="page">
   <div class="container-sm">
     <span class="eyebrow">Say Hello</span>
@@ -538,8 +495,7 @@
     <div class="contact-grid">
       <div class="contact-item">
         <div class="contact-item-label">Email</div>
-        <!-- ✏️ Replace with your real email -->
-        <div class="contact-item-val">your.email@algonquincollege.com</div>
+        <div class="contact-item-val"><a href="mailto:gvr9400@gmail.com">gvr9400@gmail.com</a></div>
       </div>
       <div class="contact-item">
         <div class="contact-item-label">Location</div>
@@ -547,8 +503,7 @@
       </div>
       <div class="contact-item">
         <div class="contact-item-label">LinkedIn</div>
-        <!-- ✏️ Replace with your real LinkedIn URL -->
-        <div class="contact-item-val">linkedin.com/in/gazel</div>
+        <div class="contact-item-val"><a href="https://www.linkedin.com/in/gazel-vr/" target="_blank">linkedin.com/in/gazel-vr</a></div>
       </div>
     </div>
 
@@ -573,8 +528,8 @@
   </div>
 
   <footer>
-    <span>Gazel — UI/UX Designer &amp; Web Developer</span>
-    <span>Interactive Multimedia · Algonquin College · 2026</span>
+    <span>Gazel V.R — UX Designer &amp; Front-End Developer</span>
+    <span>Interactive Media Design · Algonquin College · 2026</span>
   </footer>
 </div>
 
