@@ -4,6 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gazel V.R — UX Designer & Front-End Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap">
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -33,8 +36,8 @@
       </div>
       <div class="hero-stat-row">
         <div>
-          <div class="hero-stat-num accent-text">3</div>
-          <div class="hero-stat-label">Live Projects</div>
+          <div class="hero-stat-num accent-text">5</div>
+          <div class="hero-stat-label">Projects</div>
         </div>
         <div>
           <div class="hero-stat-num" style="color:var(--accent2);">UX</div>
@@ -65,11 +68,11 @@
     <div style="max-width:1000px;margin:0 auto;">
       <span class="eyebrow">Selected Work</span>
       <h2>Recent <span class="accent-text">Projects</span></h2>
-      <p class="muted" style="font-size:15px;margin-top:.5rem;margin-bottom:0;font-weight:300;">Three live projects. Hover to preview, click to explore.</p>
+      <p class="muted" style="font-size:15px;margin-top:.5rem;margin-bottom:0;font-weight:300;">Five projects. Hover to preview, click to explore.</p>
 
       <div class="work-teaser-grid">
         <div class="work-thumb" onclick="show('p1')" title="Personal Website">
-          <img src="images/project1-preview.png" alt="Personal Website project preview" />
+          <img src="images/project1-preview.png" alt="Personal Website project preview" loading="lazy" />
           <div class="work-thumb-overlay">
             <div class="work-thumb-num">01</div>
             <div class="work-thumb-title">Personal Website</div>
@@ -78,7 +81,7 @@
         </div>
 
         <div class="work-thumb" onclick="show('p2')" title="CMS Clothing Store">
-          <img src="images/project2-preview.png" alt="CMS Clothing Store project preview" />
+          <img src="images/project2-preview.png" alt="CMS Clothing Store project preview" loading="lazy" />
           <div class="work-thumb-overlay">
             <div class="work-thumb-num">02</div>
             <div class="work-thumb-title">Clothing Store</div>
@@ -87,10 +90,28 @@
         </div>
 
         <div class="work-thumb" onclick="show('p3')" title="Travel Website">
-          <img src="images/project3-preview.png" alt="Discover Cancún project preview" />
+          <img src="images/project3-preview.png" alt="Discover Cancún project preview" loading="lazy" />
           <div class="work-thumb-overlay">
             <div class="work-thumb-num">03</div>
             <div class="work-thumb-title">Travel Website</div>
+          </div>
+          <div class="work-thumb-arrow">↗</div>
+        </div>
+
+        <div class="work-thumb" onclick="show('p4')" title="Baited by the Odds">
+          <img src="images/baited-preview.png" alt="Baited by the Odds campaign poster preview" loading="lazy" />
+          <div class="work-thumb-overlay">
+            <div class="work-thumb-num">04</div>
+            <div class="work-thumb-title">Awareness Campaign</div>
+          </div>
+          <div class="work-thumb-arrow">↗</div>
+        </div>
+
+        <div class="work-thumb" onclick="show('p5')" title="Photography Portfolio">
+          <img src="images/project5-preview.png" alt="Photography Portfolio preview" loading="lazy" />
+          <div class="work-thumb-overlay">
+            <div class="work-thumb-num">05</div>
+            <div class="work-thumb-title">Photography</div>
           </div>
           <div class="work-thumb-arrow">↗</div>
         </div>
@@ -132,7 +153,10 @@
 <div id="resume" class="page">
   <div class="container-sm">
     <span class="eyebrow">Professional</span>
-    <h2 style="margin-bottom:2.5rem;">Resume</h2>
+    <h2 style="margin-bottom:1.5rem;">Resume</h2>
+    <div style="margin-bottom:2rem;">
+      <a href="gazel-resume.pdf" download="GazelVR-Resume.pdf" class="btn btn-fill" style="font-size:12px;padding:10px 22px;">↓ Download PDF Resume</a>
+    </div>
 
     <div class="divider" style="margin-top:0;"></div>
     <div style="margin-bottom:2.5rem;">
@@ -149,7 +173,7 @@
         <div><div class="ri-title">Phone</div><div class="ri-sub">+1 (431) 726 9073</div></div>
       </div>
       <div class="resume-item">
-        <div><div class="ri-title">Email</div><div class="ri-sub"><a href="mailto:gvr9400@gmail.com" style="color:var(--muted2);text-decoration:none;">Gvr9400@gmail.com</a></div></div>
+        <div><div class="ri-title">Email</div><div class="ri-sub"><a href="/cdn-cgi/l/email-protection#610617135855515121060c00080d4f020e0c" style="color:var(--muted2);text-decoration:none;"><span class="__cf_email__" data-cfemail="551223276c616565153238343c397b363a38">[email&#160;protected]</span></a></div></div>
       </div>
       <div class="resume-item">
         <div><div class="ri-title">LinkedIn</div><div class="ri-sub"><a href="https://www.linkedin.com/in/gazel-vr/" target="_blank" style="color:var(--muted2);text-decoration:none;">GazelVr</a></div></div>
@@ -191,6 +215,19 @@
     <div class="divider"></div>
     <div style="margin-bottom:2.5rem;">
       <div class="section-label">Project Experience</div>
+
+      <div style="padding:1.25rem 0;border-bottom:1px solid var(--border);">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:0.5rem;">
+          <div class="ri-title">Baited by the Odds — Ottawa Public Health Campaign</div>
+          <div class="ri-date">Winter 2026</div>
+        </div>
+        <p style="font-size:13px;color:var(--muted2);line-height:1.8;margin-top:0.5rem;font-weight:300;">
+          Collaborated as part of a team to design a gambling awareness campaign for Ottawa Public Health. Contributed UX research, empathy mapping, ideation, and print poster design. The campaign included a digital poster and motion graphic delivering a clear, accessible message to athletes and coaches.
+        </p>
+        <div class="tags" style="margin-top:0.75rem;">
+          <span class="tag hi">UX Research</span><span class="tag">Print Design</span><span class="tag">FigJam</span><span class="tag">Illustrator</span>
+        </div>
+      </div>
 
       <div style="padding:1.25rem 0;border-bottom:1px solid var(--border);">
         <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:0.5rem;">
@@ -293,12 +330,12 @@
   <div class="container">
     <span class="eyebrow">Selected Work</span>
     <h2 style="margin-bottom:0.5rem;">Portfolio</h2>
-    <p class="muted" style="font-size:15px;margin-bottom:2.5rem;font-weight:300;">Three live projects. Click any card to see the full case study and process.</p>
+    <p class="muted" style="font-size:15px;margin-bottom:2.5rem;font-weight:300;">Five projects. Click any card to see the full case study and process.</p>
 
     <div class="grid-3">
       <div class="proj-card" onclick="show('p1')">
         <div class="proj-thumb">
-          <img src="images/project1-preview.png" alt="Personal Website Screenshot" />
+          <img src="images/project1-preview.png" alt="Personal Website Screenshot" loading="lazy" />
           <div class="proj-thumb-overlay"></div>
         </div>
         <div class="proj-body">
@@ -313,7 +350,7 @@
 
       <div class="proj-card" onclick="show('p2')">
         <div class="proj-thumb">
-          <img src="images/project2-preview.png" alt="CMS Clothing Store Screenshot" />
+          <img src="images/project2-preview.png" alt="CMS Clothing Store Screenshot" loading="lazy" />
           <div class="proj-thumb-overlay"></div>
         </div>
         <div class="proj-body">
@@ -328,7 +365,7 @@
 
       <div class="proj-card" onclick="show('p3')">
         <div class="proj-thumb">
-          <img src="images/project3-preview.png" alt="Discover Cancún Travel Website Screenshot" />
+          <img src="images/project3-preview.png" alt="Discover Cancún Travel Website Screenshot" loading="lazy" />
           <div class="proj-thumb-overlay"></div>
         </div>
         <div class="proj-body">
@@ -337,6 +374,36 @@
           <div class="proj-role">UI Design · Web Development</div>
           <div class="proj-desc">A travel website with a custom WordPress theme I built and deployed via SSH using FileZilla.</div>
           <div class="tags"><span class="tag hi">WordPress</span><span class="tag">Custom Theme</span><span class="tag">SSH Deploy</span></div>
+        </div>
+        <div class="proj-arrow">↗</div>
+      </div>
+
+      <div class="proj-card" onclick="show('p4')">
+        <div class="proj-thumb">
+          <img src="images/baited-preview.png" alt="Baited by the Odds campaign poster" loading="lazy" />
+          <div class="proj-thumb-overlay"></div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-num">04</div>
+          <div class="proj-title">Baited by the Odds</div>
+          <div class="proj-role">UX Research · Print & Campaign Design</div>
+          <div class="proj-desc">A gambling awareness campaign designed for Ottawa Public Health, built through UX research, ideation, and print design.</div>
+          <div class="tags"><span class="tag hi">UX Research</span><span class="tag">Print Design</span><span class="tag">Illustrator</span></div>
+        </div>
+        <div class="proj-arrow">↗</div>
+      </div>
+
+      <div class="proj-card" onclick="show('p5')">
+        <div class="proj-thumb">
+          <img src="images/project5-preview.jpg" alt="Photography Portfolio Preview" style="filter:brightness(0.75) saturate(0.85);" loading="lazy" />
+          <div class="proj-thumb-overlay"></div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-num">05</div>
+          <div class="proj-title">Photography Portfolio</div>
+          <div class="proj-role">Portrait · Storytelling · Conceptual</div>
+          <div class="proj-desc">A collection of portrait, storytelling, and conceptual photography published on Adobe Portfolio.</div>
+          <div class="tags"><span class="tag hi">Photography</span><span class="tag">Adobe Portfolio</span><span class="tag">Visual Storytelling</span></div>
         </div>
         <div class="proj-arrow">↗</div>
       </div>
@@ -362,7 +429,7 @@
       <span class="tag">Figma</span>
     </div>
 
-    <img src="images/p1-mockup.png" alt="Personal Website shown on laptop mockup" class="proj-hero-img" style="margin-top:2rem;" />
+    <img src="images/p1-mockup.png" alt="Personal Website shown on laptop mockup" class="proj-hero-img" style="margin-top:2rem;" loading="lazy" />
 
     <p style="font-size:15px;line-height:1.9;color:var(--muted2);font-weight:300;">
       This is a personal portfolio site I designed and built completely from scratch. I wanted something that felt clean and professional but still reflected my own style. Everything from the layout to the code was made by me, with no templates or frameworks.
@@ -403,12 +470,12 @@
 
       <div style="margin-top:1.5rem;">
         <div class="process-img-label">Figma — Lo-fi Wireframes</div>
-        <img src="images/p1-figma-wires.png" alt="Figma wireframe workspace" class="process-full-img" />
+        <img src="images/p1-figma-wires.png" alt="Figma wireframe workspace" class="process-full-img" loading="lazy" />
       </div>
 
       <div style="margin-top:1.25rem;">
         <div class="process-img-label">Figma — Interactive Prototype Flows</div>
-        <img src="images/p1-figma-proto.png" alt="Figma prototype flow" class="process-full-img" />
+        <img src="images/p1-figma-proto.png" alt="Figma prototype flow" class="process-full-img" loading="lazy" />
       </div>
     </div>
 
@@ -439,7 +506,7 @@
       <span class="tag">E-Commerce UX</span>
     </div>
 
-    <img src="images/project2-preview.png" alt="CMS Clothing Store" class="proj-hero-img" style="margin-top:2rem;" />
+    <img src="images/project2-preview.png" alt="CMS Clothing Store" class="proj-hero-img" style="margin-top:2rem;" loading="lazy" />
 
     <p style="font-size:15px;line-height:1.9;color:var(--muted2);font-weight:300;">
       CMS (Thrifted Vintage) is a clothing e-commerce store I built on Shopify. The focus was on creating a strong brand identity from scratch, including the logo, colour palette, and overall visual direction, so the store would feel premium but still approachable for vintage streetwear shoppers.
@@ -507,7 +574,7 @@
       <span class="tag">UX Research</span>
     </div>
 
-    <img src="images/project3-preview.png" alt="Discover Cancún Travel Website" class="proj-hero-img" style="margin-top:2rem;" />
+    <img src="images/project3-preview.png" alt="Discover Cancún Travel Website" class="proj-hero-img" style="margin-top:2rem;" loading="lazy" />
 
     <p style="font-size:15px;line-height:1.9;color:var(--muted2);font-weight:300;">
       Discover Cancún is a travel website I designed and built to inspire people to visit the destination. I created a custom WordPress theme from scratch and deployed it to a live server using SSH through FileZilla. The site includes a vibrant brand identity, an immersive hero section, a search function, and a gallery of destination content.
@@ -550,7 +617,7 @@
     <div style="margin-top:2.5rem;">
       <h3 style="margin-bottom:1rem;font-size:16px;color:var(--muted2);font-weight:400;letter-spacing:1px;text-transform:uppercase;">Responsiveness Demo</h3>
       <div class="process-img-label">Screen recording showing the site adapting across screen sizes</div>
-      <video class="process-video" autoplay loop muted playsinline>
+      <video class="process-video" autoplay loop muted playsinline preload="none">
         <source src="images/cancun-responsive.mp4" type="video/mp4" />
       </video>
     </div>
@@ -578,7 +645,7 @@
     <div class="contact-grid">
       <div class="contact-item">
         <div class="contact-item-label">Email</div>
-        <div class="contact-item-val"><a href="mailto:gvr9400@gmail.com">gvr9400@gmail.com</a></div>
+        <div class="contact-item-val"><a href="/cdn-cgi/l/email-protection#3d5a4b4f04090d0d7d5a505c5451135e5250"><span class="__cf_email__" data-cfemail="214657531815111161464c40484d0f424e4c">[email&#160;protected]</span></a></div>
       </div>
       <div class="contact-item">
         <div class="contact-item-label">Location</div>
@@ -593,18 +660,18 @@
     <div class="divider"></div>
 
     <h3 style="font-size:15px;font-weight:400;color:var(--muted2);margin-bottom:1.5rem;">Or send a message directly</h3>
-    <form id="contact-form" onsubmit="handleContactSubmit(event)">
+    <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" onsubmit="handleContactSubmit(event)">
       <div class="form-group">
         <label>Name</label>
-        <input type="text" placeholder="Your name" required />
+        <input type="text" name="name" placeholder="Your name" required />
       </div>
       <div class="form-group">
         <label>Email</label>
-        <input type="email" placeholder="your@email.com" required />
+        <input type="email" name="email" placeholder="your@email.com" required />
       </div>
       <div class="form-group">
         <label>Message</label>
-        <textarea placeholder="What are you working on?" required></textarea>
+        <textarea name="message" placeholder="What are you working on?" required></textarea>
       </div>
       <button type="submit" id="send-btn" class="btn" style="margin-top:0.5rem;background:transparent;">Send Message</button>
     </form>
@@ -613,6 +680,160 @@
   <footer>
     <span>Gazel V.R &mdash; UX Designer &amp; Front-End Developer</span>
     <span>Interactive Media Design &middot; Algonquin College &middot; 2026</span>
+  </footer>
+</div>
+
+<!-- PROJECT 04: BAITED BY THE ODDS -->
+<div id="p4" class="page">
+  <div class="container-sm">
+    <span class="back-btn" onclick="show('portfolio')">← Back to Portfolio</span>
+
+    <span class="eyebrow">Project 04 · UX Research · Print & Campaign Design</span>
+    <h2 style="margin-bottom:1rem;">Baited by the Odds</h2>
+    <div class="tags">
+      <span class="tag hi">Role: Researcher & Designer</span>
+      <span class="tag">UX Research</span>
+      <span class="tag">Print Design</span>
+      <span class="tag">Illustrator</span>
+      <span class="tag">FigJam</span>
+    </div>
+
+    <img src="images/baited-preview.png" alt="Baited by the Odds campaign poster" class="proj-hero-img" style="margin-top:2rem;aspect-ratio:auto;object-fit:contain;object-position:center;background:transparent;" loading="lazy" />
+
+    <p style="font-size:15px;line-height:1.9;color:var(--muted2);font-weight:300;">
+      Baited by the Odds is a gambling awareness campaign developed in collaboration with Ottawa Public Health as part of the MTM6600 Applied Project. Our team designed a system of campaign assets — including a digital poster and 15-second motion graphic — to help athletes and coaches recognize the risks of problem gambling in sport culture.
+    </p>
+
+    <div class="divider"></div>
+
+    <h3 style="margin-bottom:1rem;font-size:16px;color:var(--muted2);font-weight:400;letter-spacing:1px;text-transform:uppercase;">My Role &amp; Contributions</h3>
+    <p style="font-size:14px;line-height:1.9;color:var(--muted2);font-weight:300;">I contributed across the full UX research phase — building out the empathy map, participating in the iceberg model analysis, and contributing to the ideation sprint. On the design side, I developed poster layout concepts and worked on the visual identity of the campaign to make it feel credible and non-judgmental for the target audience.</p>
+
+    <div style="margin-top:2.5rem;">
+      <h3 style="margin-bottom:1rem;font-size:16px;color:var(--muted2);font-weight:400;letter-spacing:1px;text-transform:uppercase;">Design Process</h3>
+      <div class="process-grid">
+        <div class="process-step">
+          <div class="process-step-num">01</div>
+          <div class="process-step-label">Research</div>
+          <p>We mapped the problem space using an empathy map and iceberg model to understand what athletes and coaches hear, see, think, and feel about gambling — and why it goes unaddressed.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-step-num">02</div>
+          <div class="process-step-label">Ideation</div>
+          <p>The team ran a broad ideation sprint across four categories: video/digital media, games, education, and physical items. We used a virtual whiteboard to cluster and evaluate concepts before narrowing to a digital-first campaign.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-step-num">03</div>
+          <div class="process-step-label">Design & Iteration</div>
+          <p>We sketched multiple poster directions, refined typography and layout through several iterations, and settled on a bold orange palette with a fishing hook metaphor to represent how "one small bet can reel you in."</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:2rem;">
+      <div class="process-img-label">Empathy Map — Understanding the Athlete & Coach</div>
+      <img src="images/empathy-map.png" alt="Empathy map for the Baited by the Odds campaign" class="process-full-img" loading="lazy" />
+    </div>
+
+    <div style="margin-top:1.25rem;">
+      <div class="process-img-label">Iceberg Model — Mapping Systemic Causes of Gambling in Sport</div>
+      <img src="images/iceberg-model.png" alt="Iceberg model research board" class="process-full-img" loading="lazy" />
+    </div>
+
+    <div style="margin-top:1.25rem;">
+      <div class="process-img-label">Ideation Sprint — Four Categories of Campaign Concepts</div>
+      <img src="images/ideation-board.png" alt="Ideation whiteboard with campaign concepts" class="process-full-img" loading="lazy" />
+    </div>
+
+    <div style="margin-top:1.25rem;">
+      <div class="process-img-label">Sketch Iterations — Poster Layout & Messaging Exploration</div>
+      <img src="images/sketch-iterations.png" alt="Poster sketches and iterations" class="process-full-img" loading="lazy" />
+    </div>
+
+    <div style="margin-top:1.25rem;">
+      <div class="process-img-label">High-Fidelity Refinements — Final Poster Direction</div>
+      <img src="images/hifi-refinements.png" alt="High fidelity poster refinements on virtual whiteboard" class="process-full-img" loading="lazy" />
+    </div>
+
+    <div style="margin-top:2.5rem;">
+      <h3 style="margin-bottom:1rem;font-size:16px;color:var(--muted2);font-weight:400;letter-spacing:1px;text-transform:uppercase;">Reflection</h3>
+      <div class="reflection-box">
+        This was my first project designed for a real external client. Working within Ottawa Public Health's guidelines meant every design decision had to serve a genuine public health goal, not just look good. The research phase was more intensive than any of my solo projects — the empathy map and iceberg model forced our team to think beyond surface-level symptoms and understand the systemic reasons gambling goes unaddressed in sport. It also pushed me to design for accessibility and clarity above all else, which is something I'm carrying into every project going forward.
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <span>Gazel V.R &mdash; UX Designer &amp; Front-End Developer</span>
+    <span><span class="back-btn" style="display:inline;font-size:11px;" onclick="show('portfolio')">← All Projects</span></span>
+  </footer>
+</div>
+
+<!-- PROJECT 05: PHOTOGRAPHY PORTFOLIO -->
+<div id="p5" class="page">
+  <div class="container-sm">
+    <span class="back-btn" onclick="show('portfolio')">← Back to Portfolio</span>
+
+    <span class="eyebrow">Project 05 · Photography · Visual Storytelling</span>
+    <h2 style="margin-bottom:1rem;">Photography Portfolio</h2>
+    <div class="tags">
+      <span class="tag hi">Role: Photographer</span>
+      <span class="tag">Portrait</span>
+      <span class="tag">Storytelling</span>
+      <span class="tag">Conceptual</span>
+      <span class="tag">Adobe Portfolio</span>
+    </div>
+
+    <div class="live-link-banner" style="margin-top:2rem;">
+      <div>
+        <span>View the full photography portfolio</span>
+        <span class="note">Published on Adobe Portfolio</span>
+      </div>
+      <a href="https://vett002409cd.myportfolio.com/" target="_blank" class="btn" style="padding:9px 20px;font-size:11px;">Visit Site ↗</a>
+    </div>
+
+    <p style="font-size:15px;line-height:1.9;color:var(--muted2);font-weight:300;margin-top:2rem;">
+      A collection of personal photography work exploring portrait, storytelling, and conceptual image-making. This project lives alongside my design work as a reflection of how I see and frame the world — the same instincts that drive my UX and visual design practice.
+    </p>
+
+    <div class="divider"></div>
+
+    <h3 style="margin-bottom:1.5rem;font-size:16px;color:var(--muted2);font-weight:400;letter-spacing:1px;text-transform:uppercase;">Series</h3>
+
+    <div class="process-grid">
+      <div class="process-step">
+        <div class="process-step-num">01</div>
+        <div class="process-step-label">New Photoshoot</div>
+        <p>A recent series exploring composition, light, and subject presence. Shot in 2024 as part of an ongoing personal practice.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-step-num">02</div>
+        <div class="process-step-label">Storytelling</div>
+        <p>Images built around narrative — each frame constructed to suggest a moment, emotion, or unspoken context beyond what's visible.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-step-num">03</div>
+        <div class="process-step-label">Portrait</div>
+        <p>Close studies of people and presence. The focus here is on authentic expression and the relationship between subject and camera.</p>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <h3 style="margin-bottom:1rem;font-size:16px;color:var(--muted2);font-weight:400;letter-spacing:1px;text-transform:uppercase;">My Role &amp; Contributions</h3>
+    <p style="font-size:14px;line-height:1.9;color:var(--muted2);font-weight:300;">I conceptualized, shot, and edited all the photography in this portfolio. I also designed and published the site using Adobe Portfolio, making layout and presentation decisions to best showcase each series. This project demonstrates my eye for visual composition and my ability to communicate through imagery — skills that directly inform how I approach UX and interface design.</p>
+
+    <div style="margin-top:2.5rem;">
+      <h3 style="margin-bottom:1rem;font-size:16px;color:var(--muted2);font-weight:400;letter-spacing:1px;text-transform:uppercase;">Reflection</h3>
+      <div class="reflection-box">
+        Photography taught me to slow down and look carefully — at light, at framing, at what belongs in a shot and what doesn't. That deliberateness carries directly into my design work. When I'm composing a UI layout or deciding what to include on a page, I'm making the same kinds of decisions I make with a camera. This portfolio is personal work, but it's shaped how I think professionally.
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <span>Gazel V.R &mdash; UX Designer &amp; Front-End Developer</span>
+    <span><span class="back-btn" style="display:inline;font-size:11px;" onclick="show('portfolio')">← All Projects</span></span>
   </footer>
 </div>
 

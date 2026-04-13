@@ -5,6 +5,8 @@ const navMap = {
   p1: 'nav-portfolio',
   p2: 'nav-portfolio',
   p3: 'nav-portfolio',
+  p4: 'nav-portfolio',
+  p5: 'nav-portfolio',
   contact: 'nav-contact'
 };
 
@@ -21,20 +23,44 @@ function show(id) {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-function handleContactSubmit(e) {
+async function handleContactSubmit(e) {
   e.preventDefault();
   const btn = document.getElementById('send-btn');
-  btn.textContent = 'Message Sent ✓';
-  btn.style.borderColor = '#a8e063';
-  btn.style.color = '#a8e063';
+  const form = document.getElementById('contact-form');
+  btn.textContent = 'Sending...';
   btn.disabled = true;
-  setTimeout(() => {
-    btn.textContent = 'Send Message';
-    btn.style.borderColor = '';
-    btn.style.color = '';
+
+  try {
+    const data = new FormData(form);
+    const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (response.ok) {
+      btn.textContent = 'Message Sent ✓';
+      btn.style.borderColor = '#a8e063';
+      btn.style.color = '#a8e063';
+      form.reset();
+      setTimeout(() => {
+        btn.textContent = 'Send Message';
+        btn.style.borderColor = '';
+        btn.style.color = '';
+        btn.disabled = false;
+      }, 4000);
+    } else {
+      btn.textContent = 'Error — Try Again';
+      btn.style.borderColor = '#e06363';
+      btn.style.color = '#e06363';
+      btn.disabled = false;
+    }
+  } catch {
+    btn.textContent = 'Error — Try Again';
+    btn.style.borderColor = '#e06363';
+    btn.style.color = '#e06363';
     btn.disabled = false;
-    document.getElementById('contact-form').reset();
-  }, 3000);
+  }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
